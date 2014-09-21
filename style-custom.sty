@@ -1,8 +1,11 @@
 \ProvidesPackage{style-custom}
 
+
 \usepackage[utf8]{inputenc}
 \usepackage[italian,english]{babel}
 \usepackage{amssymb, amsmath}
+
+% \usepackage{graphicx}
 \usepackage{wrapfig}
 \usepackage{bigints}
 \usefonttheme[onlymath]{serif}
@@ -107,6 +110,9 @@
 
 
 %%definitions
+\newcommand{\dt}[1]{\frac{\partial #1}{\partial t}}
+\newcommand{\mean}[1]{\left \langle #1 \right \rangle}
+
 \newcommand{\ham}{\mathcal{H}}
 \newcommand{\intk}{ \bigintsss \!\!\! \text{\small{$\frac{d^2
 k}{(2\pi)^2}$}}\ }

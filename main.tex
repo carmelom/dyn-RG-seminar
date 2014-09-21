@@ -12,7 +12,7 @@
 %   Scuola Normale Superiore\\
 %   %University of Somewhere
 %   }
-\date{Settembre 2014}
+\date{\small{Settembre 2014}}
 
 
 % % Delete this, if you do not want the table of contents to pop up at
@@ -42,25 +42,122 @@
 
 \begin{frame}{Outline}
 \transwipe[direction=270]
-  \tableofcontents[pausesections]
+  \tableofcontents%[pausesections]
   % You might wish to add the option [pausesections]
 \end{frame}
 
 % Section and subsections will appear in the presentation overview
 % and table of contents.
 \section{Dinamica dissipativa}
-\subsection{ciao}
+\subsection{Equazioni dinamiche}
 
-\begin{frame}{Equazioni del moto}
+\begin{frame}{Equazioni dinamiche - I}
 
-sono brutte
+Vogliamo studiare la dinamica di un sistema vicino alla transizione di fase, e il modo in cui questo rilassa eventualmente all'equilibrio.
+
+In un modello efficace (\emph{coarse-grained}) del nostro sistema, dobbiamo introdurre delle equazioni cinetiche che descrivano la dissipazione in modo fenomenologico.
+\pause
+\vskip10pt
+
+\underline{Esempio classico}: moto browniano
+
+\begin{equation*}
+ m\ddot{\vec x} = \vec f(x) - \gamma m \dot{\vec x} + \vec \eta(t) \qquad \text{\footnotesize eq. di Langevin}
+\end{equation*}
+
+\vskip10pt
+overdamping: $\rightarrow \quad \dot p  = -\gamma p + \eta(t)$
+
+scrivi qualcosa che spieghi gamma e eta
+magari in un'altra slide
+\end{frame}
+
+\begin{frame}{Equazioni dinamiche - II}
+
+Generalizzo ad un sistema con hamiltoniana $\ham [q_i]$
+
+ \begin{equation*}
+%     \begin{cases}
+%         \dot p_i = -\frac{\partial \ham}{\partial q_i} \equiv v_i\\
+%         \dot q_i = \frac{\partial \ham}{\partial p_i} \equiv w_i 
+%      \end{cases}
+  \dot q_i = \Omega_{ij} \frac{\partial \ham}{\partial q_j} \equiv v_i
+    \quad \longrightarrow \quad
+    \dot q_i = v_i -\displaystyle \frac{\Gamma_i}{T} \frac{\partial \ham}{\partial q_i} + \zeta_i(t) 
+%    \begin{cases}
+%         \dot p_i = v_i -\frac{\Gamma_i}{T} \frac{\partial \ham}{\partial p_i} + \zeta(t) \\
+%         \dot q = w_i
+%      \end{cases}
+  \end{equation*}
+
+ \begin{itemize}
+ \item<2-> $\Gamma$ smorzamento: determina la scala di tempo di dissipazione dell'energia
+ 
+ \item<3-> $\zeta$ rumore gaussiano locale e decorrelato
+ \begin{flalign*}
+  & \mean{\zeta_i(t)} = 0 \\
+  & \mean{\zeta_i (t) \zeta_j (t')} = 2 D_i \ \delta_{ij}\  \delta(t-t') &&
+ \end{flalign*}
+ 
+ \end{itemize}
+
+  
+\end{frame}
+
+\begin{frame}{Evoluzione della probabilità}
+  Con le ipotesi date, la distribuzione di probabilità dello spazio delle fase evolve secondo l'equazione di Fokker - Planck
+  
+  \begin{equation*}
+   \dt P + \sum_i \frac{\partial}{\partial q_i} \left[ v_i - \frac{\Gamma_i}{T} \frac{\partial \ham}{\partial q_i} - D_i \frac{\partial}{\partial q_i} \right] P = 0
+  \end{equation*}
+\begin{columns}
+ \begin{column}{.5\textwidth}
+  \begin{figure}
+       \includegraphics[width=.8\columnwidth]{pics/Oscillator_phase_portrait.pdf}
+      \end{figure}
+  \end{column}
+  \hfill
+  \begin{column}{.4\textwidth}
+   \begin{itemize}
+    \item Hamiltonian velocity
+    \item Damping
+    \item Diffusion
+   \end{itemize}
+  \end{column}
+\end{columns}
+[voglio q1 e q2 nel disegno]
+\vskip10pt
+ per ottenere come soluzione stazionaria la distribuzione di equilibrio $P \propto e^{-\ham/T}$ è necessario soddisfare
+ \begin{equation*}
+  \Gamma_i = D_i \qquad \qquad \text{\footnotesize relazioni di Einstein}
+ \end{equation*}
+
+      
+\end{frame}
+
+
+
+\section{Osservabili (??) nella dinamica dissipativa}
+\subsection{Correlazione e risposta}
+\begin{frame}{Funzione di correlazione}
  
 \end{frame}
 
-\begin{frame}{Altro frame}
+\begin{frame}{Funzione di risposta}
  
 \end{frame}
 
+\subsection{Fluttuazione/dissipazione}
+\begin{frame}{Teorema di fluttuazione-dissipazione}
+ 
+\end{frame}
+
+
+\section{Altra roba}
+\subsection{puppa2}
+\begin{frame}{puppa2.1}
+ 
+\end{frame}
 
 \end{document}
 
