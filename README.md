@@ -1,4 +1,4 @@
 dyn-RG-seminar
 ==============
 
-Renormalization Group theory of dynamical scalig behaviour
+Renormalization Group theory of dynamical scaling behaviour
