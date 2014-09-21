@@ -109,7 +109,14 @@
 }
 
 
+%% sfondo blocchi
+\setbeamertemplate{blocks}[rounded][shadow=false]
+\addtobeamertemplate{block begin}{\pgfsetfillopacity{0.8}}{\pgfsetfillopacity{1}}
+\setbeamercolor{structure}{fg=blue}
+
 %%definitions
+
+
 \newcommand{\dt}[1]{\frac{\partial #1}{\partial t}}
 \newcommand{\mean}[1]{\left \langle #1 \right \rangle}
 
@@ -127,8 +134,11 @@ k}{(2\pi)^2}$}}\ }
 \newcommand{\sts}{{\scriptstyle ^{ss}_{LP}}}
 \newcommand{\lpsuper}[1]{{\scriptstyle^{#1}_{ LP}}}
 \newcommand{\bogsuper}[1]{^{#1}_{\scriptstyle Bog}}
+
 \DeclareMathOperator{\tr}{Tr}
 \newcommand{\trcurl}[1]{\tr \left[ #1 \right]}
+
+\DeclareMathOperator{\im}{Im}
 \newcommand{\lind}[1]{\mathcal{L}[#1]}
 
 

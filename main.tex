@@ -113,7 +113,7 @@ Generalizzo ad un sistema con hamiltoniana $\ham [q_i]$
 \begin{columns}
  \begin{column}{.5\textwidth}
   \begin{figure}
-       \includegraphics[width=.8\columnwidth]{pics/Oscillator_phase_portrait.pdf}
+       \includegraphics[width=.8\columnwidth]{pics/Oscillator_phase_portrait.eps}
       \end{figure}
   \end{column}
   \hfill
@@ -125,7 +125,7 @@ Generalizzo ad un sistema con hamiltoniana $\ham [q_i]$
    \end{itemize}
   \end{column}
 \end{columns}
-[voglio q1 e q2 nel disegno]
+
 \vskip10pt
  per ottenere come soluzione stazionaria la distribuzione di equilibrio $P \propto e^{-\ham/T}$ è necessario soddisfare
  \begin{equation*}
@@ -137,20 +137,68 @@ Generalizzo ad un sistema con hamiltoniana $\ham [q_i]$
 
 
 
-\section{Osservabili (??) nella dinamica dissipativa}
+\section{Funzioni caratteristiche della dinamica}
 \subsection{Correlazione e risposta}
+
+% \begin{frame}{Funzioni di correlazione e di risposta}
+%   Date le soluzioni $q_i(t)$ si definisce
+%  \begin{equation*}
+%    C_{ij} (t-t') = \mean{q_i(t)\ q_j(t')}
+%  \end{equation*}
+%  o in trasformata di Fourier
+%  \begin{equation*}
+%    2\pi \delta (\omega + \omega') C_{ij}(\omega) = \mean{q_i(\omega)\ q_j(\omega')}
+%  \end{equation*}
+%  
+%  Perturbo l'hamiltoniana con un piccolo campo esterno: $ \ham \rightarrow \ham - \sum_i q_i f_i(t)$\\
+% La correzione lineare alle soluzioni si può scrivere come
+% \begin{equation*}
+%   \mean{q_i(t)} = \sum_j \int dt' \ G_{ij}(t-t')f_j(t') 
+% \end{equation*}
+% o in trasformata di Fourier
+% \begin{equation*}
+%   \mean{q_i(\omega)} = \sum_j G_{ij}(\omega)f_j(\omega) 
+% \end{equation*}
+% \end{frame}
+
+
 \begin{frame}{Funzione di correlazione}
- 
-\end{frame}
+ Date le soluzioni $q_i(t)$ si definisce
+ \begin{equation*}
+   C_{ij} (t-t') = \mean{q_i(t)\ q_j(t')}
+ \end{equation*}
+ o in trasformata di Fourier
+ \begin{equation*}
+   2\pi \delta (\omega + \omega') C_{ij}(\omega) = \mean{q_i(\omega)\ q_j(\omega')}
+ \end{equation*}
+La forma di $C(\omega)$ dà informazioni sulla mutua correlazione dei modi $\{i,j\}$. In presenza di dissipazione, mi aspetto che la correlazione decada con una scala temporale tipica di ciascun modo.
 
-\begin{frame}{Funzione di risposta}
- 
-\end{frame}
+[importante per il critical slowing down]
 
+\end{frame}
 \subsection{Fluttuazione/dissipazione}
-\begin{frame}{Teorema di fluttuazione-dissipazione}
- 
+\begin{frame}{Funzione di risposta}
+Perturbo l'hamiltoniana con un piccolo campo esterno: $ \ham \rightarrow \ham - \sum_i q_i f_i(t)$\\
+La correzione lineare alle soluzioni si può scrivere come
+\begin{equation*}
+  \mean{q_i(t)} = \sum_j \int dt' \ G_{ij}(t-t')f_j(t') 
+\end{equation*}
+o in trasformata di Fourier
+\begin{equation*}
+  \mean{q_i(\omega)} = \sum_j G_{ij}(\omega)f_j(\omega) 
+\end{equation*}
+
+\pause
+\begin{block}{Teorema di fluttuazione-dissipazione}
+\begin{equation*}
+  C_{ij}(\omega) = \frac{2}{\omega}\im G_{ij}(\omega)
+\end{equation*}
+  
+\end{block}
+
+
 \end{frame}
+
 
 
 \section{Altra roba}
