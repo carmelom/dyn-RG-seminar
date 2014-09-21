@@ -1,0 +1,369 @@
+\documentclass[10pt]{beamer}
+
+\usepackage{style-custom}
+
+
+\title{Use of RG theory in dynamics}
+% \subtitle{Colloquio IV anno}
+\author[Carmelo Mordini]{Carmelo Mordini}
+
+% \institute[SNS]
+% {
+%   Scuola Normale Superiore\\
+%   %University of Somewhere
+%   }
+\date{Settembre 2014}
+
+
+% % Delete this, if you do not want the table of contents to pop up at
+% % the beginning of each subsection:
+% \AtBeginSubsection[]
+% {
+%   \begin{frame}<beamer>{Riassunto}
+%     \tableofcontents[currentsection,currentsubsection]
+%   \end{frame}
+% }
+
+% Let's get started
+
+
+\begin{document}
+
+
+%\beamertemplatenavigationsymbolsempty
+
+\begin{frame}[plain]
+\advance\textwidth2cm
+\hsize\textwidth
+\columnwidth\textwidth
+  \titlepage
+\end{frame}
+
+
+\begin{frame}{Outline}
+\transwipe[direction=270]
+  \tableofcontents[pausesections]
+  % You might wish to add the option [pausesections]
+\end{frame}
+
+% Section and subsections will appear in the presentation overview
+% and table of contents.
+\section{Dinamica dissipativa}
+\subsection{ciao}
+
+\begin{frame}{Equazioni del moto}
+
+sono brutte
+ 
+\end{frame}
+
+\begin{frame}{Altro frame}
+ 
+\end{frame}
+
+
+\end{document}
+
+
+%%%%%% MAIN DAL COLLOQUIO
+
+% eventualmente da accorciare, ma mi sa ormai di no.
+% \input{sections/sez-dinamica2.tex}
+% 
+% 
+% \section{Teoria di campo medio}
+% 
+% \begin{frame}{Dinamica dei LP}
+% 
+% \vspace{-.4cm}
+% \footnotesize
+% 
+% \begin{columns}
+% \hskip10pt
+% \begin{column}{.4\textwidth}
+% 
+% Se l'ampiezza di interazione tra polaritoni è piccola rispetto allo splitting
+% %\( \big(|\omega_p - \omega\lp| \ll \omega\up - \omega\lp \big) \)
+% e il pump è accordato vicino al fondo della branca LP, la branca superiore è molto poco eccitata.\\
+% La trascuriamo, assieme a tutti i suoi termini nell'hamiltoniana:
+% \begin{flalign*}
+%   &
+%     \begin{cases}
+%         \opsi\up \approx 0 \\
+%         \opsi_C \approx C\lp \ \opsi\lp \\
+%         \opsi_X \approx X\lp \ \opsi\lp
+%      \end{cases}
+%   \\
+%   &\qquad\quad\Downarrow \\
+%   &\opsi\lp \approx C\lpsuper{*} \ \opsi_C + X\lpsuper{*} \ \opsi_X
+%    \end{flalign*}
+%    \end{column}
+%     \begin{column}{.6\textwidth}
+%       \begin{figure}
+%        \includegraphics[scale=.25]{pics/LP_pump.png}
+%       \end{figure}
+%   \end{column}
+%  \end{columns}
+% 
+% \normalsize
+% \begin{align*}
+%   \ham = \ \hbar \intr & \opsi\lpsuper{\dagger} \, \big[ \omega\lp(-i\nabla) \big]\, \opsi\lpsuper{} + \frac{g\lp}{2} \opsi\lpsuper{\dagger}  \opsi\lpsuper{\dagger} \displaystyle\opsi\lpsuper{}  \opsi\lpsuper{} \\
+%         &+ \left( i F_p e^{ik_p r -i\omega_p t} \ \opsi\lpsuper{\dagger} + \hc \right)
+% \end{align*}
+% 
+% \end{frame}
+% 
+% 
+% \subsection{Gross-Pitaevskii}
+% \begin{frame}{Driven Dissipative GPE}
+% Mean Field: $\displaystyle \qquad\opsi\lp \longmapsto \left<\opsi\lp\right> \equiv \psi\lp$
+% % \[ i\hbar \partial_t \trcurl{\rho \opsi\lp} \approx i\hbar \partial_t \,\psi\lp
+% % \]
+% 
+% %{\centering
+% \vspace{5pt}{\footnotesize La sostituzione è esatta per i termini lineari, approssimata per l'interazione:}
+% \begin{equation*}
+%   \begin{cases}
+%              \left< \opsi^\dagger \opsi\, \opsi \right> \approx |\psi|^2 \psi \\
+%              \omega\lp (k) \approx {\omega\lp}^0 + \displaystyle\frac{\hbar k^2}{2m\lp} \\
+%            \end{cases}
+% \end{equation*}
+% 
+%             
+% % ddGPE
+% \ovalbox{
+% \begin{minipage}{\textwidth}
+%  \[
+%  i\partial_t \, \psi\lp = \left[ \omega\lp (-i\nabla) + g\lp |\psi\lp|^2 - i \frac{\gamma\lp}{2} \right]\, \psi\lp + i F_p e^{ik_pr - \omega_p t}
+%  \]
+%  \vskip0pt
+% \end{minipage}
+% }
+% 
+% \begin{flalign*}
+%  \begin{cases}
+%   m\lp = m_C/|C\lp|^2 \qquad &g\lp = |X\lp|^2 \,g_X + |C\lp|^2 \,g_C \\
+%   \gamma\lp = |C\lp|^2 \gamma_{{\scriptscriptstyle rad}} \qquad &F_p = C\lp\, \eta E_{inc}
+%  \end{cases}
+%  &&
+% \end{flalign*}
+% 
+% \end{frame}
+% 
+% \subsection{Stato stazionario}
+% 
+% \begin{frame}{Stato stazionario}
+% %\input{pandabear.tex}
+% Soluzione stazionaria: \( \psi\lpsuper{0}(r,t) = \psi\sts \ e^{ik_pr - i\omega_p t}  \leftarrow\) \alert{phase locking}
+% 
+% \[
+%  \left( \omega_p - \omega\lp (k_p) - g\lp |\psi\sts|^2 + i \frac{\gamma\lp}{2} \right)\, \psi\sts = i F_p
+% \]
+% 
+% La stabilità delle soluzioni si valuta linearizzando attorno alla soluzione $\psi\lpsuper{0}$, e dipende dall'intensità del laser di pump e dal detuning \(\Delta \omega_p = \omega_p - \omega\lp(k_p)\):
+% % \begin{figure}
+% % \includegraphics[width=\textwidth]{pics/Shapevspump-and-Spectra.png}
+% % \end{figure}
+% \begin{columns}[t]
+%  \begin{column}{.5\textwidth}
+%   \begin{figure}
+%    \includegraphics[width=\columnwidth]{pics/Shapevspump.png}
+%    %\smallcaption{\(\Delta\omega_p <0\) (top) vs \(\Delta\omega_p >0\) (bottom)}
+%   \end{figure}
+% 
+%  \end{column}
+% 
+%  \begin{column}{.5\textwidth}
+%   \begin{figure}
+%    \includegraphics[width=\columnwidth]{pics/Spectra.png}
+%   % \smallcaption{Spettro di Bogoliubov nei due casi}
+%   \end{figure}
+%  \end{column}
+% 
+% \end{columns}
+% \let\thefootnote\relax\footnote{\scriptsize Grafici e simulazioni da  Carusotto, Ciuti, \emph{P.R.L.} \textbf{93}, 16 (2004) e\\ \hspace{.55cm}Ciuti, Carusotto, \emph{Phys. Stat. Sol.} \textbf{242}, 11 (2005)}
+% 
+% \end{frame}
+% 
+% \subsection{Spettro delle eccitazioni}
+% 
+% \begin{frame}{Spettro delle eccitazioni}
+% Soluzione stazionaria: \( \psi\lp(r,t) = \psi\sts e^{ik_pr - i\omega_p t} + \delta\psi (r,t)\)\\
+% Al I ordine in \(\delta\psi\), lo spettro delle eccitazioni (modi di Bogoliubov) si ricava con un procedimento analogo al caso di un gas di bosoni all'equilibrio
+% {\footnotesize
+% \begin{flalign*}
+%  \bvec{\delta \psi} = {\big( \delta\psi \; , \; {\delta\psi}^* \big)}^T \\
+%  \\
+%  i \partial_t\, \bvec{\delta\psi} = \mathcal{L}\bog \cdot \bvec{\delta\psi}
+%  \end{flalign*}
+% 
+% 
+% }
+% % {\footnotesize
+% % \[
+% %  \begin{pmatrix}
+% %   \omega\lp (k) + 2 g\lp |\psi\sts|^2 -i\frac{\gamma\lp (k)}{2}       &\hspace{-1cm}  g\lp{\psi\sts}^2 \\
+% %   \\
+% %   \\ \hspace{-1.8cm}- g\lp{{\psi\sts}^*}^2    & \hspace{-1.8cm}       2\omega_p -\left(\omega\lp (2k_p-k) + 2g\lp|\psi\sts|^2\right) -i\frac{\gamma\lp (2k_p-k)}{2}
+% %  \end{pmatrix}
+% % \]
+% % }
+% 
+% \[
+%  \omega\bogsuper{\pm} = \omega_p + \delta k \cdot v_p -i\frac{\gamma\lp}{2} \pm \sqrt{\left(2 g\lp |\psi\sts|^2 + \eta_{\delta k} - \Delta_p\right)\left(\eta_{\delta k} - \Delta_p\right)}
+% \]
+% \begin{columns}
+%   \begin{column}{.5\textwidth}
+%     {\footnotesize
+% dove i parametri di controllo entrano in
+% \begin{flalign*}
+%  \begin{cases}
+%     \delta k = k-k_p \qquad \eta_{\delta k}= \frac{\hbar {\delta k}^2}{2 m\lp} \\
+%     \Delta_p = \omega_p - \omega\lp(k_p) - g\lp |\psi\sts|^2
+%  \end{cases}
+%  &&
+% \end{flalign*}
+% }
+%   \end{column}
+%   \begin{column}{.4\textwidth}
+%   \vspace{-15pt}
+%     \begin{figure}
+%       \includegraphics[width=.8\columnwidth]{pics/Shapevspump-delta.png}
+%     \end{figure}
+% 
+%   \end{column}
+% \end{columns}
+% 
+% \end{frame}
+% 
+% 
+% \section{Superfluidità}
+% \begin{frame}{Perturbazione locale}
+% \begin{columns}
+% 	\begin{column}{.5\textwidth}
+% 	  \[
+% 	\mathcal{V} = \intr \sum_{j=X,C} V_j(r) \opsi_j^\dagger \opsi_j
+% 	  \]
+% 	\end{column}
+% 	
+% 	\begin{column}{.5\textwidth}
+% 	    \begin{itemize}
+% 	      \item stress meccanico
+% 	      \item variazione $\ell_z$
+% 	      \item drogaggio
+% 	      \item difetti della cavità
+% 	    \end{itemize}
+% 
+% 	\end{column}
+% \end{columns}
+% \vspace{10pt}
+% Potenziale \underline{statico} $\Rightarrow$ eccita solo i modi ad energia $\omega_p$ 
+% \vskip20pt
+% %   \begin{figure}
+% %   \includegraphics[width=.7\textwidth]{pics/potentials.png}
+% %   \mycaption{simulazione numerica}
+% %   \end{figure}
+% \begin{minipage}{\textwidth}
+%   I parametri che determinano la risposta del sistema si possono manipolare dall'esterno:
+% \begin{itemize}
+%   \item $\theta_p \longrightarrow k_p \longrightarrow$ velocità del flusso
+%   \item Pump intensity $\longrightarrow$ densità dei polaritoni $\longrightarrow$ interazione
+% \end{itemize}
+% % \begin{wrapfigure}{l}{.35\textwidth}
+% % \includegraphics[width=.1\textwidth]{pics/laser.png}
+% % \end{wrapfigure}
+% % \begin{columns}
+% %   \begin{column}{.5\textwidth}
+% %     \begin{figure}
+% %       \centering
+% %       \includegraphics[height=.3\textheight]{pics/laser.png}
+% %     \end{figure}
+% % 
+% %   \end{column}
+% %   \begin{column}{.5\textwidth}
+% %     \footnotesize
+% %     esperimento
+% %   \end{column}
+% % 
+% % 
+% % \end{columns}
+% 
+% 
+% \end{minipage}
+% 
+%  \end{frame}
+% 
+% \subsection{Resonant Rayleigh Scattering}
+% \begin{frame}{Resonant Rayleigh Scattering}
+% Low/off-resonance excitation: interazioni $LP$ trascurabili\\
+% Scattering elastico dei singoli polaritoni
+% \begin{columns}[t]
+%   \begin{column}{.25\textwidth}
+%     \begin{figure}
+%         \includegraphics[width=\columnwidth]{pics/scattering-RRS-exp.png}
+%     \end{figure}
+%   \end{column}
+%   \begin{column}{.75\textwidth}
+%     \begin{figure}
+%       \includegraphics[width=\columnwidth]{pics/scattering-RRS-teo.png}
+%     \end{figure}
+%   \end{column}
+% \end{columns}
+% \let\thefootnote\relax\footnote{\scriptsize Dati sperimentali da Amo, Lefrère, \emph{Nat. Phys.} \textbf{5} (2009) }
+% \end{frame}
+% 
+% 
+% %%%-----------alternative
+% \ifnum\videovariable=1
+% {
+% \input{sections/sez-regimi-video.tex} 
+% 
+% }
+% \else{
+% \input{sections/sez-regimi-foto.tex}
+% }
+% \fi
+% 
+% % Placing a * after \section means it will not show in the
+% % outline or table of contents.
+% % 
+% % 
+% % \section*{Summary}
+% % 
+% % \begin{frame}{Summary}
+% %   Ciao
+% % \end{frame}
+% % 
+% % 
+% % 
+% % % All of the following is optional and typically not needed.
+% % \appendix
+% % \section<presentation>*{\appendixname}
+% % \subsection<presentation>*{For Further Reading}
+% % 
+% % \begin{frame}[allowframebreaks]
+% %   \frametitle<presentation>{For Further Reading}
+% % 
+% %   \begin{thebibliography}{10}
+% % 
+% %   \beamertemplatebookbibitems
+% %   % Start with overview books.
+% % 
+% %   \bibitem{Author1990}
+% %     A.~Author.
+% %     \newblock {\em Handbook of Everything}.
+% %     \newblock Some Press, 1990.
+% % 
+% % 
+% %   \beamertemplatearticlebibitems
+% %   % Followed by interesting articles. Keep the list short.
+% % 
+% %   \bibitem{Someone2000}
+% %     S.~Someone.
+% %     \newblock On this and that.
+% %     \newblock {\em Journal of This and That}, 2(1):50--100,
+% %     2000.
+% %   \end{thebibliography}
+% % \end{frame}
+% 
+% \end{document}
