@@ -275,15 +275,39 @@ Hamiltoniana di Ginzburg Laudau, in approssimazione gaussiana
    Ovvero, risolvo le equazioni dei $\sigma_q$, le sostituisco nel resto del sistema e medio sul rumore gaussiano $\zeta_q$ dei modi eliminati.
    \item[(ii)] \emph{Scaling \& renormalization}: i modi rimasti vengono riscalati sostituendo
    \begin{flalign*}
-    \sigma_k(t) \mapsto s^{1-\eta/2}\ \sigma_{sk}(s^{-z}t) \Leftrightarrow \sigma_k(\omega) \mapsto s^{1-\eta/2 + z}\ \sigma_{sk}(s^z\omega)&&
+    \sigma_k(t) \longmapsto s^{1-\eta/2}\ \sigma_{sk}(s^{-z}t) &&%\Leftrightarrow \sigma_k(\omega) \mapsto s^{1-\eta/2 + z}\ \sigma_{sk}(s^z\omega)&&
    \end{flalign*}
 
   \end{itemize}
 
-Infine, con il cambio di variabili $\{ \omega' = s^z \omega\ ;\ k' = sk \}$\\
+Infine, con il cambio di variabili $\{ t' = s^{-z} t\ ;\ k' = sk \}$\\
 si portano le equazioni nella forma di partenza, trovando la legge di trasformazione dei parametri. 
 
 \end{frame}
+
+\subsection{trasf delle funzioni}
+\begin{frame}{Trasformazione delle funzioni}
+ \begin{equation*}
+  \mean{\sigma_k(\omega)\sigma_q(\bar\omega)}_\mu = \mean{\sigma_{k'}(\omega')\sigma_{q'}(\bar\omega')}_{\mu'}
+ \end{equation*}
+
+\end{frame}
+
+
+\begin{frame}{Trasformazione delle funzioni}
+ Dopo la trasformazione, la forma delle equazioni è la stessa $\Rightarrow$ le quantità medie dipendenti dai modi che non ho eliminato \underline{rimangono invariate} (non dipendono dalle variabili nel blocco) ed hanno la stessa forma funzionale (la forma delle equazioni è la stessa) [SCRIVILO MEGLIO]
+ 
+ \only<1>
+ \begin{flalign*}
+  \begin{cases}
+   \displaystyle -i\omega \sigma_k = -\frac{\Gamma_k}{r_0 + ck^2}  \ \sigma_k + \zeta_k(\omega)  \\
+   \sigma_k(\omega) \mapsto s^{1-\eta/2 + z}\ \sigma_{sk}(s^z\omega) \\
+  \end{cases}
+&&
+ \end{flalign*}
+
+\end{frame}
+
 
 \end{document}
 
