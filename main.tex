@@ -91,9 +91,10 @@ Generalizzo ad un sistema con hamiltoniana $\ham [q_i]$
   \end{equation*}
 
  \begin{itemize}
- \item<2-> $\Gamma$ smorzamento: determina la scala di tempo di dissipazione dell'energia
+ \item<+-> $v_i$ mode-mode coupling fissato dall'hamiltoniana
+ \item<+-> $\Gamma$ smorzamento: determina la scala di tempo di dissipazione dell'energia
  
- \item<3-> $\zeta$ rumore gaussiano locale e decorrelato
+ \item<+-> $\zeta$ rumore gaussiano locale e decorrelato
  \begin{flalign*}
   & \mean{\zeta_i(t)} = 0 \\
   & \mean{\zeta_i (t) \zeta_j (t')} = 2 D_i \ \delta_{ij}\  \delta(t-t') &&
@@ -171,11 +172,10 @@ Generalizzo ad un sistema con hamiltoniana $\ham [q_i]$
  \begin{equation*}
    2\pi \delta (\omega + \omega') C_{ij}(\omega) = \mean{q_i(\omega)\ q_j(\omega')}
  \end{equation*}
-La forma di $C(\omega)$ dà informazioni sulla mutua correlazione dei modi $\{i,j\}$. In presenza di dissipazione, mi aspetto che la correlazione decada con una scala temporale tipica di ciascun modo.
-
-[importante per il critical slowing down]
+La forma di $C(\omega)$ dà informazioni sulla mutua correlazione dei modi $\{i,j\}$. In presenza di dissipazione, mi aspetto che \underline{l'autocorrelazione} $C_{ii}$ decada con una scala temporale tipica di ciascun modo.
 
 \end{frame}
+
 \subsection{Fluttuazione/dissipazione}
 \begin{frame}{Funzione di risposta}
 Perturbo l'hamiltoniana con un piccolo campo esterno: $ \ham \rightarrow \ham - \sum_i q_i f_i(t)$\\
@@ -196,15 +196,93 @@ o in trasformata di Fourier
   
 \end{block}
 
+\end{frame}
+
+\begin{frame}{Toy model: teoria di Van Hove}
+Hamiltoniana di Ginzburg Laudau, in approssimazione gaussiana
+
+\begin{equation*}
+  \ham/T = \frac{1}{2} \sum_{k<\Lambda} (r_0 + ck^2)|\sigma_k|^2 = \frac{1}{2} \sum_{k<\Lambda}{G_0(k)}^{-1}\sigma_k \sigma_{-k} 
+ \end{equation*}
+ 
+\begin{equation*}
+ \begin{cases}
+ \displaystyle \dt{\sigma_k} = -\frac{\Gamma_k}{T}\frac{\partial \ham}{\partial \sigma_{-k}} + \zeta_k(t) = -\Gamma_k {G_0(k)}^{-1} \ \sigma_k + \zeta_k(t)  \\
+ \mean{\zeta_k (t) \zeta_q (t')} = 2 \Gamma_k \ \delta_{-kq}\  \delta(t-t') 
+ \end{cases}
+\end{equation*}
+
+\pause
+{\footnotesize
+\begin{columns}
+ \begin{column}{.5\textwidth}
+   La soluzione in trasformata è\\
+    \begin{flalign*}
+     \sigma_k(\omega) = \frac{\zeta_k(\omega)}{\Gamma_k {G_0(k)}^{-1} - i\omega} &&
+    \end{flalign*}
+   e mediando sulle $\zeta$ calcolo
+   \begin{flalign*}
+    C_k(\omega) = \frac{2\Gamma_k}{\left(\Gamma_k {G_0(k)}^{-1}\right)^2 + \omega^2} &&
+   \end{flalign*}
+
+ \end{column}
+
+ \begin{column}{.5\textwidth}
+  Perturbo $\ham$ con $-\sum_k h_k(t) \sigma_{-k}$\\ La soluzione si sposta in
+  \begin{flalign*}
+   \mean{\sigma_k(\omega)} = \frac{\Gamma_k \ h_k(\omega)}{\Gamma_k {G_0(k)}^{-1} - i\omega} &&
+  \end{flalign*}
+  da cui
+  \begin{flalign*}
+   G_k(\omega) = \frac{\Gamma_k}{\Gamma_k {G_0(k)}^{-1} - i\omega} &&
+  \end{flalign*}
+ \end{column}
+
+\end{columns}
+}
+
+\end{frame}
+
+\begin{frame}{Toy model: teoria di Van Hove}
+ \textbf{Remarks}
+ \begin{itemize}
+  \item Per $\omega = 0$ ritrovo la correlazione statica:\\
+  $G(k,\omega = 0) = \int \frac{d\omega}{2\pi} \ C_k(\omega) = \mean{\sigma_{-k}\ \sigma_k} \equiv G_0(k)$
+  \item Per ciascun $k$, $C_k$ è una lorentziana di larghezza
+  \begin{equation*}
+   \displaystyle \tau_k = \frac{G_0(k)}{\Gamma_k} \equiv \frac{1}{\Gamma_k}\ \frac{\xi^2/c}{1+\xi^2 k^2}
+  \end{equation*}
+  
+  \item Per $T \to T_c \quad \left( \xi \to \infty\right) \qquad \Longrightarrow \displaystyle \tau_k \sim \frac{k^{-2}}{\Gamma_k}$
+%     \begin{flalign*}
+%      \tau_k \sim \frac{k^{-2}}{\Gamma_k} &&
+%     \end{flalign*}
+ \end{itemize}
+ Il tempo di rilassamento \emph{diverge} alla transizione per i modi di alta lunghezza d'onda:\\
+%  I modi di alta lunghezza d'onda (responsabili della transizione) hanno tempi di rilassamento divergenti:\\
+    \centering \underline{critical slowing down}
 
 \end{frame}
 
 
 
-\section{Altra roba}
-\subsection{puppa2}
-\begin{frame}{puppa2.1}
- 
+\section{Equazioni di RG}
+\subsection{come fare}
+\begin{frame}{Come si fa RG - trova un altro titolo}
+  Partendo dalle equazioni dinamiche per i modi $\sigma_k$, si applicano i due step già concettualmente definiti nel caso statico:
+  \begin{itemize}
+   \item[(i)] \emph{Coarse-graining}: elimino dal sistema i modi $\sigma_q$ con $\Lambda/s < q < \Lambda$.\\
+   Ovvero, risolvo le equazioni dei $\sigma_q$, le sostituisco nel resto del sistema e medio sul rumore gaussiano $\zeta_q$ dei modi eliminati.
+   \item[(ii)] \emph{Scaling \& renormalization}: i modi rimasti vengono riscalati sostituendo
+   \begin{flalign*}
+    \sigma_k(t) \mapsto s^{1-\eta/2}\ \sigma_{sk}(s^{-z}t) \Leftrightarrow \sigma_k(\omega) \mapsto s^{1-\eta/2 + z}\ \sigma_{sk}(s^z\omega)&&
+   \end{flalign*}
+
+  \end{itemize}
+
+Infine, con il cambio di variabili $\{ \omega' = s^z \omega\ ;\ k' = sk \}$\\
+si portano le equazioni nella forma di partenza, trovando la legge di trasformazione dei parametri. 
+
 \end{frame}
 
 \end{document}
