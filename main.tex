@@ -336,25 +336,69 @@ N.B. è necessario che la parte statica dei parametri $\mu_\ham^*$ sia un punto 
 %     \tableofcontents[currentsection,currentsubsection]
 %   \end{frame}
 \begin{frame}{TDGL}
-  \[\displaystyle -i\omega \sigma_k = -\frac{\Gamma_k}{r_0 + ck^2}  \ \sigma_k + \zeta_k(\omega) \]
-
+ \transwipe[direction=270]
+ \setbeamercovered{invisible} 
  \begin{itemize}
-  \item[(i)] senza i termini di mode-mode coupling, le equazioni per i $\sigma_q$ sono disaccoppiate dal resto -- è sufficiente eliminarle
-
- 
- \item[(ii)] \begin{flalign*}
+  \item[(i)]<+-> senza i termini di mode-mode coupling, le equazioni per i $\sigma_q$ sono disaccoppiate dal resto -- è sufficiente eliminarle
+  \item[(ii)]<+-> sostituisco nelle rimanenti $ \left \{\sigma_k(\omega) \mapsto s^{1-\eta/2 + z}\ \sigma_{sk}(s^z\omega)\ ; \ \omega' = s^{z} \omega\ ;\ k' = sk \right\} $
+ \end{itemize}
+\only<1>
+{
+\begin{equation*}
   \begin{cases}
-   \sigma_k(\omega) \mapsto s^{1-\eta/2 + z}\ \sigma_{sk}(s^z\omega) \\
-   \omega' = s^{z} \omega\ ;\ k' = sk 
-  \end{cases} \\ 
-  \Downarrow \\ \displaystyle -i\omega' \sigma_{k'} = -\frac{s^z\ \Gamma_{k'/s}}{r_0 + c\ (k'/s)^2}  \ \sigma_{k'} + s^{\eta/2 -1}\zeta_{k'/s}(s^{-z}\omega')
-&&
- \end{flalign*}
-
-\end{itemize}
+   \displaystyle -i\omega \sigma_k = -\Gamma_k(r_0 + ck^2)  \ \sigma_k + \zeta_k(\omega)\\
+   \mean{\zeta_{-k}(\omega)\ \zeta_k(\bar\omega)} = 2\Gamma_k\ 2\pi \delta(\omega + \bar\omega)\\
+   \end{cases}
+\end{equation*}
+}
+\only<2->
+{
+\begin{equation*}
+ \begin{cases}
+    \displaystyle -i\omega' \sigma_{k'} = -s^{z-2}\ \Gamma_{k'/s}(s^2 r_0 + c{k'}^2)  \ \sigma_{k'} + s^{\eta/2 -1}\zeta_{k'/s}(s^{-z}\omega') \\
+    \mean{\zeta'_{-k'}(\omega')\ \zeta'_{k'}(\bar\omega')} = 2 \Gamma'_{k'}\ 2\pi \delta(\omega' + \bar\omega')
+   \end{cases} 
+\end{equation*}
+}
+\visible<3>{
+ \begin{itemize}
+  \item[(iii)] definisco i nuovi parametri in modo da riportare le equazioni nella forma di partenza
+ \end{itemize}
+ 
+ \begin{equation*}
+  \begin{cases}
+   \zeta'_q(\omega) = s^{\eta/2 -1} \zeta_{q/s}(s^{-z}\omega) \\
+   \Gamma'_q = s^{z+\eta-2} \Gamma_{q/s}\\
+   r_0' = s^{2-\eta} r_0 \\
+   c' = s^{-\eta} c
+  \end{cases}
+ \end{equation*}
+ }
 \end{frame}
 
-\begin{frame}{Ruolo delle leggi di conservazione}
+\begin{frame}{TDGL - ruolo delle leggi di conservazione}
+ Ho ritrovato la legge di trasformazione nota da RG statico.
+ 
+ Fisso i parametri di $\ham$ sul punto fisso stabile statico:
+ \begin{flalign*}
+  & \text{Per} ~d> 4 \Rightarrow \eta = 0; \ (r_0^* = 0,\ c^*=1)  &\text{\footnotesize punto fisso gaussiano}\\
+  & \text{Per} ~d< 4 \Rightarrow \eta = 0; \ (r_0^* \neq 0,\ u^* \neq 0) &\text{\footnotesize punto fisso di Wilson-Fisher}&&
+ \end{flalign*}
+ 
+ La forma di $\Gamma_k$ determina l'esponente critico dinamico: $\Gamma_k \approx \Gamma + \gamma k^2 + O(k^4)$
+
+ \begin{itemize}
+  \item[a)] $\Gamma \neq 0$: nelle equazioni dei modi con $k\to 0$ mantengo $\Gamma_k = \Gamma$\\
+    $\Gamma' = s^{z-2} \Gamma$ ~ ha un punto fisso non banale se $z=2$
+  
+  \item[b)] $\Gamma = 0$: questo è fissato in un sistema in cui lo spin totale è conservato; la legge per il parametro $\gamma$ è\\
+  $\gamma' = s^{z-4} \gamma$ ~ che ha un punto fisso non banale se $z=4$
+ \end{itemize}
+ 
+\end{frame}
+
+\subsection{Isotropic ferromagnet}
+\begin{frame}{Interazioni ferromagnetiche}
  
 \end{frame}
 
