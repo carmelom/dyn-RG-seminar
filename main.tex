@@ -399,8 +399,30 @@ N.B. è necessario che la parte statica dei parametri $\mu_\ham^*$ sia un punto 
 
 \subsection{Isotropic ferromagnet}
 \begin{frame}{Interazioni ferromagnetiche}
- 
+La dinamica degli spin è quella di precessione in un campo magnetico
+\begin{flalign*}
+\begin{cases}
+\displaystyle  \dt{ \vec \sigma} = \lambda\  \vec \sigma \times \vec B(x) \\
+\displaystyle \vec B(x) =  -\frac{\delta \ham}{\delta \vec \sigma(x)} = \vec h(x) + \nabla^2 \vec\sigma
+\end{cases} &&
+\end{flalign*}
+Questo è un termine di mode-mode coupling nelle equazioni dinamiche per le componenti $\vec\sigma_{k}$
+
+\begin{flalign*}
+  &\displaystyle \vec v_k = \lambda L^{-d/2} \ \sum_{k,q} \vec \sigma_{k-q} \times (\vec h_q - q^2 \vec\sigma_q) \\
+  & \dt{ \vec \sigma_k} = \vec v_k -\gamma k^2 \frac{\partial \ham}{\partial \vec \sigma_{-k}} + \vec \zeta_k(t) &&
+\end{flalign*}
 \end{frame}
+
+\begin{frame}{Interazioni ferromagnetiche}
+ Partendo dal punto fisso stabile del TDGL
+ \begin{flalign*}
+  &\mu_0^* = (\lambda = 0,\ \gamma,\ r_0^*,\ u^*)\\
+  &\eta = 0,\ z=4 &&
+ \end{flalign*}
+Applico lo step (ii) ed osservo come trasforma $v_k$.\\ Ho $\lambda' = s^{z-1-d/2}\  \lambda = s^{3-d/2}\ \lambda\quad \Longrightarrow \quad \mu_0^*$ ~stabile per $d>6$
+\end{frame}
+
 
 \end{document}
 
