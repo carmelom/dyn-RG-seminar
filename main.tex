@@ -198,6 +198,7 @@ o in trasformata di Fourier
 
 \end{frame}
 
+\subsection{Toy model}
 \begin{frame}{Toy model: teoria di Van Hove}
 Hamiltoniana di Ginzburg Laudau, in approssimazione gaussiana
 
@@ -267,8 +268,8 @@ Hamiltoniana di Ginzburg Laudau, in approssimazione gaussiana
 
 
 \section{Equazioni di RG}
-\subsection{come fare}
-\begin{frame}{Come si fa RG - trova un altro titolo}
+\subsection{Rinormalizzazione delle equazioni dinamiche}
+\begin{frame}{Rinormalizzazione delle equazioni dinamiche}
   Partendo dalle equazioni dinamiche per i modi $\sigma_k$, si applicano i due step già concettualmente definiti nel caso statico:
   \begin{itemize}
    \item[(i)] \emph{Coarse-graining}: elimino dal sistema i modi $\sigma_q$ con $\Lambda/s < q < \Lambda$.\\
@@ -281,23 +282,62 @@ Hamiltoniana di Ginzburg Laudau, in approssimazione gaussiana
   \end{itemize}
 
 Infine, con il cambio di variabili $\{ t' = s^{-z} t\ ;\ k' = sk \}$\\
-si portano le equazioni nella forma di partenza, trovando la legge di trasformazione dei parametri. 
+si portano le equazioni nella forma di partenza, trovando la legge di trasformazione nello spazio dei parametri allargato $\mu = (v,\ \Gamma,\ \mu_\ham)$. 
 
 \end{frame}
 
-\subsection{trasf delle funzioni}
+\subsection{Trasformazione delle funzioni}
 \begin{frame}{Trasformazione delle funzioni}
- \begin{equation*}
-  \mean{\sigma_k(\omega)\sigma_q(\bar\omega)}_\mu = \mean{\sigma_{k'}(\omega')\sigma_{q'}(\bar\omega')}_{\mu'}
- \end{equation*}
+% Dopo la trasformazione $\Rightarrow$ le quantità medie dipendenti dai modi che non ho eliminato \underline{rimangono invariate} (non dipendono dalle variabili nel blocco) ed hanno la stessa forma funzionale (la forma delle equazioni è la stessa) [SCRIVILO MEGLIO]
+La trasformazione lascia invariate le medie dei modi di alta lunghezza d'onda 
+\begin{flalign*}
+ \mean{\sigma_k(\omega)\ \sigma_q(\bar\omega)}_\mu = \mean{\sigma'_{k'}(\omega')\ \sigma'_{q'}(\bar\omega')}_{\mu'}  &&
+\end{flalign*}
+%  \begin{equation*}
+%  \begin{cases}
+%   \mean{\sigma_k(\omega)\ \sigma_q(\bar\omega)}_\mu = \mean{\sigma'_{k'}(\omega')\ \sigma'_{q'}(\bar\omega')}_{\mu'} \\
+%   \sigma'_{k'}(\omega') = s^{1-\eta/2 + z}\ \sigma_{sk}(s^z\omega) \\
+%  \end{cases}
+%  \end{equation*}
 
+% {\footnotesize
+%  \begin{flalign*}
+%   & \mean{\sigma_k(\omega)\ \sigma_q(\bar\omega)}_\mu = s^{2-\eta + 2z}\ \mean{\sigma_{sk}(s^z\omega)\ \sigma_{sq}(s^z \bar\omega)}_{R_s \mu} \\
+%   & 2\pi \delta(\omega + \bar\omega)\ C(k,\omega,\mu) = 2\pi \delta(s^z(\omega + \bar\omega))\ s^{2-\eta+2z} C(sk,s^z\omega,R_s\mu) &&
+%  \end{flalign*}
+% }
+\begin{block}
+
+\vskip-10pt
+\begin{align*}
+ & C(k,\omega,\mu) = s^{2-\eta+z}\ C(sk,s^z\omega,R_s\mu)  \\
+ & G(k,\omega,\mu) = s^{2-\eta}\ G(sk,s^z\omega,R_s\mu)
+\end{align*}
+
+\end{block}
+\pause
+Al punto critico corrispondente alla transizione di fase, il sistema viene portato da RG in un punto fisso stabile $\mu^*$.
+
+N.B. è necessario che la parte statica dei parametri $\mu_\ham^*$ sia un punto fisso stabile del sistema in equilibrio \emph{(static fixed point)}
+\begin{flalign*}
+ \begin{cases}
+  G(k,\omega,t) = \xi^{2-\eta}\ g(\xi k,\xi^z \omega) \\
+  \tau_k(t) = \xi^z\ f(\xi k)\\
+  \xi \sim t^{-\nu}
+ \end{cases}
+ \qquad \text{Si trovano le forme di scala} &&
+\end{flalign*}
 \end{frame}
 
+\section{Modelli dinamici}
+\subsection{Time Dependent Ginzburg Landau}
 
-\begin{frame}{Trasformazione delle funzioni}
- Dopo la trasformazione, la forma delle equazioni è la stessa $\Rightarrow$ le quantità medie dipendenti dai modi che non ho eliminato \underline{rimangono invariate} (non dipendono dalle variabili nel blocco) ed hanno la stessa forma funzionale (la forma delle equazioni è la stessa) [SCRIVILO MEGLIO]
+\begin{frame}{TDGL}
  
- \only<1>
+ \begin{itemize}
+  \item[(i)] senza i termini di mode-mode coupling, le equazioni per i $\sigma_q$ sono disaccoppiate dal resto dei modi
+ \[\displaystyle -i\omega \sigma_k = -\frac{\Gamma_k}{r_0 + ck^2}  \ \sigma_k + \zeta_k(\omega) \]
+
  \begin{flalign*}
   \begin{cases}
    \displaystyle -i\omega \sigma_k = -\frac{\Gamma_k}{r_0 + ck^2}  \ \sigma_k + \zeta_k(\omega)  \\
@@ -305,9 +345,14 @@ si portano le equazioni nella forma di partenza, trovando la legge di trasformaz
   \end{cases}
 &&
  \end{flalign*}
-
+ 
+ \item[(ii)] con il cambio di variabili $\{ \omega' = s^{z} \omega\ ;\ k' = sk \}$ trovo la forma 
+\end{itemize}
 \end{frame}
 
+\begin{frame}{Ruolo delle leggi di conservazione}
+ 
+\end{frame}
 
 \end{document}
 
