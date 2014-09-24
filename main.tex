@@ -68,8 +68,7 @@ In un modello efficace (\emph{coarse-grained}) del nostro sistema, dobbiamo intr
 \vskip10pt
 overdamping: $\rightarrow \quad \dot p  = -\gamma p + \eta(t)$
 
-scrivi qualcosa che spieghi gamma e eta
-magari in un'altra slide
+I coefficienti $\gamma$ ed $\eta$ riassumono in modo efficace l'interazione con il bagno termico.
 \end{frame}
 
 \begin{frame}{Equazioni dinamiche - II}
@@ -209,7 +208,7 @@ Hamiltoniana di Ginzburg Laudau, in approssimazione gaussiana
 \begin{equation*}
  \begin{cases}
  \displaystyle \dt{\sigma_k} = -\frac{\Gamma_k}{T}\frac{\partial \ham}{\partial \sigma_{-k}} + \zeta_k(t) = -\Gamma_k {G_0(k)}^{-1} \ \sigma_k + \zeta_k(t)  \\
- \mean{\zeta_k (t) \zeta_q (t')} = 2 \Gamma_k \ \delta_{-kq}\  \delta(t-t') 
+ \mean{\zeta_k (t) \zeta_q (t')} = 2 \Gamma_k \ \delta_{-k,q}\  \delta(t-t') 
  \end{cases}
 \end{equation*}
 
@@ -251,10 +250,10 @@ Hamiltoniana di Ginzburg Laudau, in approssimazione gaussiana
   $G(k,\omega = 0) = \int \frac{d\omega}{2\pi} \ C_k(\omega) = \mean{\sigma_{-k}\ \sigma_k} \equiv G_0(k)$
   \item Per ciascun $k$, $C_k$ è una lorentziana di larghezza
   \begin{equation*}
-   \displaystyle \tau_k = \frac{G_0(k)}{\Gamma_k} \equiv \frac{1}{\Gamma_k}\ \frac{\xi^2/c}{1+\xi^2 k^2}
+   \displaystyle \tau_k = \frac{G_0(k)}{\Gamma_k} \equiv \frac{1}{\Gamma_k}\ \frac{\xi^2/c}{1+\xi^2 k^2}\qquad \text{\footnotesize forma di scala}
   \end{equation*}
   
-  \item Per $T \to T_c \quad \left( \xi \to \infty\right) \qquad \Longrightarrow \displaystyle \tau_k \sim \frac{k^{-2}}{\Gamma_k}$
+  \item Per $T = T_c \quad \left( \xi \to \infty\right) \qquad \Longrightarrow \displaystyle \tau_k \sim \frac{k^{-2}}{\Gamma_k}$
 %     \begin{flalign*}
 %      \tau_k \sim \frac{k^{-2}}{\Gamma_k} &&
 %     \end{flalign*}
@@ -262,6 +261,7 @@ Hamiltoniana di Ginzburg Laudau, in approssimazione gaussiana
  Il tempo di rilassamento \emph{diverge} alla transizione per i modi di alta lunghezza d'onda:\\
 %  I modi di alta lunghezza d'onda (responsabili della transizione) hanno tempi di rilassamento divergenti:\\
     \centering \underline{critical slowing down}
+Possiamo formulare un'\emph{ipotesi di scala dinamica}
 
 \end{frame}
 
@@ -409,7 +409,7 @@ La dinamica degli spin è quella di precessione in un campo magnetico
 Questo è un termine di mode-mode coupling nelle equazioni dinamiche per le componenti $\vec\sigma_{k}$
 
 \begin{flalign*}
-  &\displaystyle \vec v_k = \lambda L^{-d/2} \ \sum_{k,q} \vec \sigma_{k-q} \times (\vec h_q - q^2 \vec\sigma_q) \\
+  &\displaystyle \vec v_k = \lambda L^{-d/2} \ \sum_{q} \vec \sigma_{k-q} \times (\vec h_q - q^2 \vec\sigma_q) \\
   & \dt{ \vec \sigma_k} = \vec v_k -\gamma k^2 \frac{\partial \ham}{\partial \vec \sigma_{-k}} + \vec \zeta_k(t) &&
 \end{flalign*}
 \end{frame}
@@ -423,281 +423,37 @@ Questo è un termine di mode-mode coupling nelle equazioni dinamiche per le comp
 Applico lo step (ii) ed osservo come trasforma $v_k$.\\ Ho $\lambda' = s^{z-1-d/2}\  \lambda = s^{3-d/2}\ \lambda\quad \Longrightarrow \quad \mu_0^*$ ~stabile per $d>6$
 \end{frame}
 
+\begin{frame}{Punto fisso per $d<6$}
+ Con la procedura familiare, per $d= 6-\eps$, cerco un punto fisso stabile sviluppando ad $O(\eps)$ attorno al punto fisso gaussiano:
+
+ \begin{equation*}
+ \begin{cases}
+   r_0 = u = 0 \\
+   \lambda' = s^{z-4+\eps/2}\ \lambda \\
+   \gamma' = s^{z-4}\ \gamma \left( 1 + \frac{1}{3} (\lambda/\gamma)^2 K_6 \ln s\right); \quad \tilde\lambda = \lambda/\gamma
+  \end{cases}
+ \end{equation*}
+ 
+ \begin{flalign*}
+  &\tilde\lambda' = s^{\eps/2} \tilde\lambda \left( 1 - \frac{1}{3} \tilde\lambda^2 K_6 \ln s\right) \quad\Rightarrow\quad 
+  \begin{cases}
+   \tilde\lambda^* = \pm \left( \frac{3\eps}{2K_6}\right)^{1/2}\\
+   z= 4-\eps/2 = 1+d/2
+  \end{cases} &&
+ \end{flalign*}
+\end{frame}
+
+\begin{frame}{Conclusioni}
+ \begin{itemize}
+  \item<+-> La dinamica di un sistema vicino alla transizione è determinata dai modi di alta lunghezza d'onda: possiamo formulare un'\emph{ipotesi di scala dinamica}, per la quale i tempi di rilassamento divergono a causa della lunghezza di correlazione. RG permette di trovare la forma di scala $\tau_k \sim \xi^z \sim t^{-\nu z}$
+  \item<+-> Per una stessa classe di universalità statica $(n,d)$ il comportamento critico è fortemente influenzato dal modello dinamico scelto: elementi come leggi di conservazione o accoppiamento tra i modi modificano le equazioni per il punto fisso ed i corrispondenti esponenti critici.
+ \end{itemize}
+
+\end{frame}
 
 \end{document}
 
 
-%%%%%% MAIN DAL COLLOQUIO
-
-% eventualmente da accorciare, ma mi sa ormai di no.
-% \input{sections/sez-dinamica2.tex}
-% 
-% 
-% \section{Teoria di campo medio}
-% 
-% \begin{frame}{Dinamica dei LP}
-% 
-% \vspace{-.4cm}
-% \footnotesize
-% 
-% \begin{columns}
-% \hskip10pt
-% \begin{column}{.4\textwidth}
-% 
-% Se l'ampiezza di interazione tra polaritoni è piccola rispetto allo splitting
-% %\( \big(|\omega_p - \omega\lp| \ll \omega\up - \omega\lp \big) \)
-% e il pump è accordato vicino al fondo della branca LP, la branca superiore è molto poco eccitata.\\
-% La trascuriamo, assieme a tutti i suoi termini nell'hamiltoniana:
-% \begin{flalign*}
-%   &
-%     \begin{cases}
-%         \opsi\up \approx 0 \\
-%         \opsi_C \approx C\lp \ \opsi\lp \\
-%         \opsi_X \approx X\lp \ \opsi\lp
-%      \end{cases}
-%   \\
-%   &\qquad\quad\Downarrow \\
-%   &\opsi\lp \approx C\lpsuper{*} \ \opsi_C + X\lpsuper{*} \ \opsi_X
-%    \end{flalign*}
-%    \end{column}
-%     \begin{column}{.6\textwidth}
-%       \begin{figure}
-%        \includegraphics[scale=.25]{pics/LP_pump.png}
-%       \end{figure}
-%   \end{column}
-%  \end{columns}
-% 
-% \normalsize
-% \begin{align*}
-%   \ham = \ \hbar \intr & \opsi\lpsuper{\dagger} \, \big[ \omega\lp(-i\nabla) \big]\, \opsi\lpsuper{} + \frac{g\lp}{2} \opsi\lpsuper{\dagger}  \opsi\lpsuper{\dagger} \displaystyle\opsi\lpsuper{}  \opsi\lpsuper{} \\
-%         &+ \left( i F_p e^{ik_p r -i\omega_p t} \ \opsi\lpsuper{\dagger} + \hc \right)
-% \end{align*}
-% 
-% \end{frame}
-% 
-% 
-% \subsection{Gross-Pitaevskii}
-% \begin{frame}{Driven Dissipative GPE}
-% Mean Field: $\displaystyle \qquad\opsi\lp \longmapsto \left<\opsi\lp\right> \equiv \psi\lp$
-% % \[ i\hbar \partial_t \trcurl{\rho \opsi\lp} \approx i\hbar \partial_t \,\psi\lp
-% % \]
-% 
-% %{\centering
-% \vspace{5pt}{\footnotesize La sostituzione è esatta per i termini lineari, approssimata per l'interazione:}
-% \begin{equation*}
-%   \begin{cases}
-%              \left< \opsi^\dagger \opsi\, \opsi \right> \approx |\psi|^2 \psi \\
-%              \omega\lp (k) \approx {\omega\lp}^0 + \displaystyle\frac{\hbar k^2}{2m\lp} \\
-%            \end{cases}
-% \end{equation*}
-% 
-%             
-% % ddGPE
-% \ovalbox{
-% \begin{minipage}{\textwidth}
-%  \[
-%  i\partial_t \, \psi\lp = \left[ \omega\lp (-i\nabla) + g\lp |\psi\lp|^2 - i \frac{\gamma\lp}{2} \right]\, \psi\lp + i F_p e^{ik_pr - \omega_p t}
-%  \]
-%  \vskip0pt
-% \end{minipage}
-% }
-% 
-% \begin{flalign*}
-%  \begin{cases}
-%   m\lp = m_C/|C\lp|^2 \qquad &g\lp = |X\lp|^2 \,g_X + |C\lp|^2 \,g_C \\
-%   \gamma\lp = |C\lp|^2 \gamma_{{\scriptscriptstyle rad}} \qquad &F_p = C\lp\, \eta E_{inc}
-%  \end{cases}
-%  &&
-% \end{flalign*}
-% 
-% \end{frame}
-% 
-% \subsection{Stato stazionario}
-% 
-% \begin{frame}{Stato stazionario}
-% %\input{pandabear.tex}
-% Soluzione stazionaria: \( \psi\lpsuper{0}(r,t) = \psi\sts \ e^{ik_pr - i\omega_p t}  \leftarrow\) \alert{phase locking}
-% 
-% \[
-%  \left( \omega_p - \omega\lp (k_p) - g\lp |\psi\sts|^2 + i \frac{\gamma\lp}{2} \right)\, \psi\sts = i F_p
-% \]
-% 
-% La stabilità delle soluzioni si valuta linearizzando attorno alla soluzione $\psi\lpsuper{0}$, e dipende dall'intensità del laser di pump e dal detuning \(\Delta \omega_p = \omega_p - \omega\lp(k_p)\):
-% % \begin{figure}
-% % \includegraphics[width=\textwidth]{pics/Shapevspump-and-Spectra.png}
-% % \end{figure}
-% \begin{columns}[t]
-%  \begin{column}{.5\textwidth}
-%   \begin{figure}
-%    \includegraphics[width=\columnwidth]{pics/Shapevspump.png}
-%    %\smallcaption{\(\Delta\omega_p <0\) (top) vs \(\Delta\omega_p >0\) (bottom)}
-%   \end{figure}
-% 
-%  \end{column}
-% 
-%  \begin{column}{.5\textwidth}
-%   \begin{figure}
-%    \includegraphics[width=\columnwidth]{pics/Spectra.png}
-%   % \smallcaption{Spettro di Bogoliubov nei due casi}
-%   \end{figure}
-%  \end{column}
-% 
-% \end{columns}
-% \let\thefootnote\relax\footnote{\scriptsize Grafici e simulazioni da  Carusotto, Ciuti, \emph{P.R.L.} \textbf{93}, 16 (2004) e\\ \hspace{.55cm}Ciuti, Carusotto, \emph{Phys. Stat. Sol.} \textbf{242}, 11 (2005)}
-% 
-% \end{frame}
-% 
-% \subsection{Spettro delle eccitazioni}
-% 
-% \begin{frame}{Spettro delle eccitazioni}
-% Soluzione stazionaria: \( \psi\lp(r,t) = \psi\sts e^{ik_pr - i\omega_p t} + \delta\psi (r,t)\)\\
-% Al I ordine in \(\delta\psi\), lo spettro delle eccitazioni (modi di Bogoliubov) si ricava con un procedimento analogo al caso di un gas di bosoni all'equilibrio
-% {\footnotesize
-% \begin{flalign*}
-%  \bvec{\delta \psi} = {\big( \delta\psi \; , \; {\delta\psi}^* \big)}^T \\
-%  \\
-%  i \partial_t\, \bvec{\delta\psi} = \mathcal{L}\bog \cdot \bvec{\delta\psi}
-%  \end{flalign*}
-% 
-% 
-% }
-% % {\footnotesize
-% % \[
-% %  \begin{pmatrix}
-% %   \omega\lp (k) + 2 g\lp |\psi\sts|^2 -i\frac{\gamma\lp (k)}{2}       &\hspace{-1cm}  g\lp{\psi\sts}^2 \\
-% %   \\
-% %   \\ \hspace{-1.8cm}- g\lp{{\psi\sts}^*}^2    & \hspace{-1.8cm}       2\omega_p -\left(\omega\lp (2k_p-k) + 2g\lp|\psi\sts|^2\right) -i\frac{\gamma\lp (2k_p-k)}{2}
-% %  \end{pmatrix}
-% % \]
-% % }
-% 
-% \[
-%  \omega\bogsuper{\pm} = \omega_p + \delta k \cdot v_p -i\frac{\gamma\lp}{2} \pm \sqrt{\left(2 g\lp |\psi\sts|^2 + \eta_{\delta k} - \Delta_p\right)\left(\eta_{\delta k} - \Delta_p\right)}
-% \]
-% \begin{columns}
-%   \begin{column}{.5\textwidth}
-%     {\footnotesize
-% dove i parametri di controllo entrano in
-% \begin{flalign*}
-%  \begin{cases}
-%     \delta k = k-k_p \qquad \eta_{\delta k}= \frac{\hbar {\delta k}^2}{2 m\lp} \\
-%     \Delta_p = \omega_p - \omega\lp(k_p) - g\lp |\psi\sts|^2
-%  \end{cases}
-%  &&
-% \end{flalign*}
-% }
-%   \end{column}
-%   \begin{column}{.4\textwidth}
-%   \vspace{-15pt}
-%     \begin{figure}
-%       \includegraphics[width=.8\columnwidth]{pics/Shapevspump-delta.png}
-%     \end{figure}
-% 
-%   \end{column}
-% \end{columns}
-% 
-% \end{frame}
-% 
-% 
-% \section{Superfluidità}
-% \begin{frame}{Perturbazione locale}
-% \begin{columns}
-% 	\begin{column}{.5\textwidth}
-% 	  \[
-% 	\mathcal{V} = \intr \sum_{j=X,C} V_j(r) \opsi_j^\dagger \opsi_j
-% 	  \]
-% 	\end{column}
-% 	
-% 	\begin{column}{.5\textwidth}
-% 	    \begin{itemize}
-% 	      \item stress meccanico
-% 	      \item variazione $\ell_z$
-% 	      \item drogaggio
-% 	      \item difetti della cavità
-% 	    \end{itemize}
-% 
-% 	\end{column}
-% \end{columns}
-% \vspace{10pt}
-% Potenziale \underline{statico} $\Rightarrow$ eccita solo i modi ad energia $\omega_p$ 
-% \vskip20pt
-% %   \begin{figure}
-% %   \includegraphics[width=.7\textwidth]{pics/potentials.png}
-% %   \mycaption{simulazione numerica}
-% %   \end{figure}
-% \begin{minipage}{\textwidth}
-%   I parametri che determinano la risposta del sistema si possono manipolare dall'esterno:
-% \begin{itemize}
-%   \item $\theta_p \longrightarrow k_p \longrightarrow$ velocità del flusso
-%   \item Pump intensity $\longrightarrow$ densità dei polaritoni $\longrightarrow$ interazione
-% \end{itemize}
-% % \begin{wrapfigure}{l}{.35\textwidth}
-% % \includegraphics[width=.1\textwidth]{pics/laser.png}
-% % \end{wrapfigure}
-% % \begin{columns}
-% %   \begin{column}{.5\textwidth}
-% %     \begin{figure}
-% %       \centering
-% %       \includegraphics[height=.3\textheight]{pics/laser.png}
-% %     \end{figure}
-% % 
-% %   \end{column}
-% %   \begin{column}{.5\textwidth}
-% %     \footnotesize
-% %     esperimento
-% %   \end{column}
-% % 
-% % 
-% % \end{columns}
-% 
-% 
-% \end{minipage}
-% 
-%  \end{frame}
-% 
-% \subsection{Resonant Rayleigh Scattering}
-% \begin{frame}{Resonant Rayleigh Scattering}
-% Low/off-resonance excitation: interazioni $LP$ trascurabili\\
-% Scattering elastico dei singoli polaritoni
-% \begin{columns}[t]
-%   \begin{column}{.25\textwidth}
-%     \begin{figure}
-%         \includegraphics[width=\columnwidth]{pics/scattering-RRS-exp.png}
-%     \end{figure}
-%   \end{column}
-%   \begin{column}{.75\textwidth}
-%     \begin{figure}
-%       \includegraphics[width=\columnwidth]{pics/scattering-RRS-teo.png}
-%     \end{figure}
-%   \end{column}
-% \end{columns}
-% \let\thefootnote\relax\footnote{\scriptsize Dati sperimentali da Amo, Lefrère, \emph{Nat. Phys.} \textbf{5} (2009) }
-% \end{frame}
-% 
-% 
-% %%%-----------alternative
-% \ifnum\videovariable=1
-% {
-% \input{sections/sez-regimi-video.tex} 
-% 
-% }
-% \else{
-% \input{sections/sez-regimi-foto.tex}
-% }
-% \fi
-% 
-% % Placing a * after \section means it will not show in the
-% % outline or table of contents.
-% % 
-% % 
-% % \section*{Summary}
-% % 
-% % \begin{frame}{Summary}
-% %   Ciao
-% % \end{frame}
-% % 
-% % 
-% % 
 % % % All of the following is optional and typically not needed.
 % % \appendix
 % % \section<presentation>*{\appendixname}
